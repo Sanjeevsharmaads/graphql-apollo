@@ -1,0 +1,5 @@
+- This is a basic project to start with Graphql
+- 👀  Node JS is used as backend layer
+- 👀  React JS is used as frontend layer.
+-  Use npm install in main directory to install required packages to run backend
+- Use npm install inside client folder in directory to install required packages to run frontend
