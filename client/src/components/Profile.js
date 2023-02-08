@@ -1,6 +1,23 @@
+import { useMutation } from '@apollo/client'
 import React from 'react'
+import { ADD_WEBSITE } from "../gqloperations/mutations"
 
 export default function Profile() {
+    const [addWebsite, {error, data, loading}] = useMutation(ADD_WEBSITE)
+
+
+    const updateWebsite = (e) => {
+        e.preventDefault()
+        console.log("e", e?.target.value )
+        addWebsite({
+            variables:{
+                website:
+                {website:
+                    e.target?.value
+                }
+            }
+        })
+    }
     return (
         <div className="container my-container">
             <div className="center-align">
@@ -15,6 +32,12 @@ export default function Profile() {
             <blockquote>
                 <h6>if it works dont touch it</h6>
             </blockquote>
+            <input
+                 type="text"
+                 placeholder="Update Website"
+                 name="website"
+                 onBlur={updateWebsite}
+            />
         </div>
     )
 }

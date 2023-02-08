@@ -24,6 +24,7 @@ const typeDefs = gql`
      email:String!
      password:String!
      quotes:[Quote]
+     website: String
  }
  type Quote{
      name:String!
@@ -38,6 +39,7 @@ const typeDefs = gql`
      signupUser(userNew:UserInput!):User
      signinUser(userSignin:UserSigninInput!):Token
      createQuote(name:String!):String
+     addUserWebsite(userWebsite: UserWebsiteInput!):User
  }
 
  input UserInput{
@@ -49,6 +51,10 @@ const typeDefs = gql`
  input UserSigninInput{
     email:String!
     password:String!
+ }
+
+ input UserWebsiteInput {
+    website:String!
  }
 
 `
